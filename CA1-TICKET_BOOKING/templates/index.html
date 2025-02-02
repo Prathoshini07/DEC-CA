@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Home page</title>
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        {% if error %}
+    <div style="color: red; margin-bottom: 10px;">
+        {{ error }}
+    </div>
+{% endif %}
+        <a href="{{ url_for('add_event') }}">Add a New Event</a>
+        <ul>
+            {%if events%}
+                {%for event in events%}
+                    <li>{{event[0]}}- {{event[1]}} -{{event[2]}}-{{event[3]}}</li>
+                {%endfor%}
+            {%else%}
+                <p> No events available</p>
+            {%endif%}
+        </ul>
+        <a href="{{url_for('add_show')}}">Add show</a>
+        <ul>
+            {%if shows%}
+                {%for show in shows%}
+                    <li> {{show[0]}}-{{show[1]}}-{{show[2]}} -{{show[3]}}-{{show[4]}}</li>
+                {%endfor%}
+            {%else%}
+                <p> No shows available</p>
+            {%endif%}
+        </ul>
+        <a href="{{url_for('book')}}">Book tickets</a>
+        <ul>
+            {%if bookings%}
+                {% for book in bookings%}
+                    <li> {{book[1]}}-{{book[2]}}-{{book[3]}}-{{book[4]}}</li>
+                {%endfor%}
+            {%else%}
+                <p>No bookings</p>
+            {%endif%}
+        </ul>
+        <a href="{{url_for('delete')}}">Delete</a>
+    </body>
+</html>
+            

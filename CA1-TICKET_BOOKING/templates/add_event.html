@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Add event</title>
+    </head>
+    <body>
+        <form action="{{url_for('add_event')}}" method="post">
+            <label for="name">Name</label>
+            <input type="text" name="name">
+            <br><br>
+            <label for="detail">Detail</label>
+            <input type="text" name="detail">
+            <br><br>
+            <label for="organizer">Organizer</label>
+            <input type="text" name='organizer'>
+            <button type="submit">Enter event</button>
+        </form>
+    <a href="/">Return to home page</a>
+    </body>
+</html>

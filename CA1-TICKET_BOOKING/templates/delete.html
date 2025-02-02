@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>delete tickets</title>
+    </head>
+    <body>
+        <form action="{{url_for('delete')}}" method="post">
+            <label for="show_event_id">Shows</label>
+            <select name="booking_id">
+                {%for book in bookings%}
+                <option value="{{book[0]}}">{{book[0]}}</option>
+                {%endfor%}
+            </select>
+            <button type="delete">Delete</button>
+        </form>
+        <a href="/">return to home page </a>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Tickets</title>
+</head>
+<body>
+    <h1>Book Tickets for {{ show.show_time }}</h1>
+    <form method="post">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <label>Number of Tickets:</label>
+        <input type="number" name="num_tickets" min="1" required>
+        <button type="submit">Book</button>
+    </form>
+</body>
+</html>

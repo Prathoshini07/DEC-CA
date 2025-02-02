@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Add Show</title>
+</head>
+<body>
+    <h2>Add a New Show</h2>
+    <form action="{{ url_for('add_show') }}" method="post">
+        <label for="event_id">Select Event:</label>
+        <select name="event_id" required>
+            {% for event in events %}
+                <option value="{{ event[0] }}">{{ event[1] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label for="show_time">Show Time:</label>
+        <input type="text" name="show_time" required>
+        <br><br>
+
+        <label for="available_tickets">Available Tickets:</label>
+        <input type="number" name="available_tickets" required>
+        <br><br>
+
+        <button type="submit">Add Show</button>
+    </form>
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

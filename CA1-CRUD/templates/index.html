@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Shows</title>
+</head>
+<body>
+    <h2>Events</h2>
+    <a href="{{ url_for('add_event') }}">Add a New Event</a>
+    <ul>
+        {% if events %}
+            {% for event in events %}
+                <li>{{event[0]}}-{{ event[1] }} - {{ event[2] }}</li>
+            {% endfor %}
+        {% else %}
+            <p>No events available.</p>
+        {% endif %}
+    </ul>
+
+    <h2>Shows</h2>
+    <a href="{{ url_for('add_show') }}">Add a New Show</a>
+    <ul>
+        {% if shows %}
+            {% for show in shows %}
+                <li>
+                    {% for event in events %}
+                        {% if event[0] == show[1] %}
+                            Event: {{ event[1] }}
+                        {% endif %}
+                    {% endfor %}
+                    | Show Time: {{ show[2] }} | Tickets Left: {{ show[3] }}
+                    <a href="{{ url_for('book', show_id=show[0]) }}">Book Tickets</a>
+                </li>
+            {% endfor %}
+        {% else %}
+            <p>No shows available.</p>
+        {% endif %}
+    </ul>
+</body>
+</html>

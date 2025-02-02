@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Summary</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Booking Summary</h1>
+    <ul>
+        {% for booking in bookings %}
+            <li>{{ booking.customer_name }} booked {{ booking.num_tickets }} tickets.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
