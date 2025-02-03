@@ -1,0 +1,30 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    background-color: aqua;
+    font-style: italic;
+    color: blueviolet;
+}
+li{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    background-color: aqua;
+    font-style: italic;
+    color: blueviolet;
+}
+button{
+    background-color: blue;
+    color:bisque;
+}
+form button:hover{
+    background-color: black;
+    transform: scale(1.5);
+}
+form label{
+    background-color:beige ;
+}
+form input{
+    border: 10px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
