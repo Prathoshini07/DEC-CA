@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Insert student details</title>
+    </head>
+    <body>
+        <form action="{{url_for('create_student')}}" method="post">
+            <label for="name">Name</label>
+            <input type="text" name="name">
+            <label for=age> Age </label>
+            <input type="number" name="age">
+            <label for="dep">Department</label>
+            <input type="text" name="department">
+            <button type="submit">Submit</button>
+        </form>
+        <a href='/'>Go back to home page</a>
+    </body>
+</html>

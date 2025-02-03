@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>delete</title>
+    </head>
+    <body>
+        <form action="{{url_for('delete_student')}}" method="post">
+            <label for="id">Student IDS</label>
+            <select name="id">
+                {%for student in students%}
+                <option value="{{student[0]}}">{{student[0]}}</option>
+                {%endfor%}
+            </select>
+            <button type="delete">Delete</button>
+        </form>
+        <a href="/">Back to home page</a>
+    </body>
+</html>

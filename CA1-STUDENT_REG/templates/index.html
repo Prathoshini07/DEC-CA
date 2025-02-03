@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <a href="{{url_for('create_student')}}">Add student</a>
+        <ul>
+            {%if students%}
+                {%for student in students%}
+                    <li>{{student[0]}}-{{student[1]}}-{{student[2]}}-{{student[3]}}</li>
+                {%endfor%}
+            {%else%}
+                <p>No students available</p>
+            {%endif%}
+        </ul>
+        <a href="{{url_for('edit_student')}}">Edit student</a>
+        <a href="{{url_for('delete_student')}}">Delete student</a>
+    </body>
+</html>

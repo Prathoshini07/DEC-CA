@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Edit student</title>
+    </head>
+    <body>
+        <form action="{{url_for('edit_student')}}" method="post">
+            <label for="id">Student IDS</label>
+            <select name="id">
+                {%for student in students%}
+                <option value="{{student[0]}}">{{student[0]}}</option>
+                {%endfor%}
+            </select>
+            <label for="name">Name</label>
+            <input type="text" name="name">
+            <label for=age> Age </label>
+            <input type="number" name="age">
+            <label for="dep">Department</label>
+            <input type="text" name="department">
+            <button type="submit">Submit</button>
+        </form>
+        <a href="/">Return to home page</a>
+    </body>
+</html>
+
